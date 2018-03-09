@@ -20,7 +20,8 @@ public class ExceptionTest {
     public void test(){
         try {
             int a=10;
-            throwExcetion();
+//            throwExcetion();
+            throwRuntimeExcetion();
             a+=10;
             System.out.println(a);
         } catch (Exception e) {
@@ -35,5 +36,13 @@ public class ExceptionTest {
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    public void throwRuntimeExcetion() throws Exception {
+//        try {
+            throw new RuntimeException("测试抛出异常");
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
     }
 }
