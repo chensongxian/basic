@@ -35,4 +35,10 @@ public class AssignDemo {
     }
 
 
+    @Test
+    public void test3(){
+        int min=Integer.MIN_VALUE;
+        System.out.println(min);
+    }
+
 }
