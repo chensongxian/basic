@@ -20,17 +20,15 @@ public class ExceptionTest {
      * 当异常被捕捉后仍然会往下执行
      */
     public void test(){
-//        try {
+        try {
             int a=10;
-//            throwExceptionNoCatch();
-//            throwRuntimeExcetion();
-//            throwRuntimeExceptionNoCatch();
-//        throwNoCheckException();
+//            runTimeException();
+            runTimeExceptionCatch();
             a+=10;
             System.out.println("test结果："+a);
-//        } catch (Exception e) {
-//            System.err.println("test异常，" + e.getMessage());
-//        }
+        } catch (Exception e) {
+            System.err.println("test异常，" + e.getMessage());
+        }
 
 //        runTimeException();
     }
@@ -50,6 +48,18 @@ public class ExceptionTest {
         throw new ClassCastException();
     }
 
+    /**
+     * 抛出运行时异常时，不捕获程序无法继续执行
+     * 只有在调用方法中进行异常捕获才会继续往下执行
+     * 
+     */
+    public void runTimeExceptionCatch() {
+        try {
+            throw new ClassCastException();
+        } catch (RuntimeException e) {
+            System.err.println("运行时异常捕获");
+        }
+    }
     public void throwExcetion() throws Exception {
         try {
             throw new Exception("测试抛出异常");

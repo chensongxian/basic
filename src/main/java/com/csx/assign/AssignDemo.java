@@ -19,6 +19,7 @@ public class AssignDemo {
          * 再赋值给b时就会报错
          */
         //b=b+1;
+        System.out.println(b);
     }
 
     @Test

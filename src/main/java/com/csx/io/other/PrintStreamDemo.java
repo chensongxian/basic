@@ -11,8 +11,9 @@ import java.io.PrintStream;
  */
 public class PrintStreamDemo {
     public static void main(String[] args) throws Exception {
-        PrintStream out = new PrintStream("F:\\idea\\basic\\src\\main\\java\\com\\csx\\io\\print.txt" );
+//        PrintStream out = new PrintStream("F:\\idea\\basic\\src\\main\\java\\com\\csx\\io\\print.txt" );
 
+        PrintStream out = new PrintStream(System.out);
         //write(int b)方法只写最低8位
         out.write(97); //a
         //print方法将97先变成字符串保持原样将数据打印到目的地

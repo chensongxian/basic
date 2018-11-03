@@ -66,7 +66,7 @@ public class ByteStreamDemo {
     //读取方式三
     public static void demo_read3() throws IOException {
 
-        FileInputStream fis = new FileInputStream("F:\\idea\\basic\\src\\main\\java\\com\\csx\\io\\bytedemo.txt" );
+        FileInputStream fis = new FileInputStream("/Users/chensongxian/IdeaProjects/basic/src/main/java/com/csx/io/bytedemo.txt" );
 
         //一次读取一个字节
         int ch = 0;

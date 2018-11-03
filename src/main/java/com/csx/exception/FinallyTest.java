@@ -9,11 +9,12 @@ package com.csx.exception;
  */
 public class FinallyTest {
     public static void main(String[] args) {
-        System.out.println(new FinallyTest().test3());
+        System.out.println(new FinallyTest().test2());
     }
 
     /**
-     * 异常抛出后不再往下执行，但是一定会执行finally
+     * 异常抛出后不再往下执行，但是一定会执行finally，
+     * 所以最终输出结果是-1
      * @return
      */
     public int test1(){
@@ -32,19 +33,21 @@ public class FinallyTest {
 
     /**
      * finally会执行，但不会影响return的结果
+     * 返回2
      * @return
      */
     public int test2(){
         int x=1;
         try {
-//            int result=1/0;
+            int result=1/0;
             x++;
             return x;
         }catch (Exception e){
+            x++;
             e.printStackTrace();
         }finally {
             x++;
-            System.out.println(x);
+            System.out.println("final:"+x);
 //            return x;
         }
         return -1;
@@ -53,6 +56,7 @@ public class FinallyTest {
 
     /**
      * 在finally里面return会影响return结果
+     * 返回3
      * @return
      */
     public  int test3() {
@@ -65,7 +69,7 @@ public class FinallyTest {
             x=5;
         } finally {
             ++x;
-            System.out.println(x);
+            System.out.println("final:"+x);
             return x;
         }
     }

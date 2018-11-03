@@ -13,7 +13,8 @@ import java.util.Scanner;
  */
 public class ReadKey {
     public static void main(String[] args) throws IOException {
-        readKey();
+//        readKey();
+        readKey_1();
     }
 
     public static void readKey() throws IOException {
