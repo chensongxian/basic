@@ -18,7 +18,9 @@ public class AssignDemo {
          * 下面这句会报编译错误，因为b是byte类型当b和1相加之后结果变成了int类型,
          * 再赋值给b时就会报错
          */
-        //b=b+1;
+//        b=b+1;
+        // 不会报错，因为b+=1会在编译之后变成b=(byte)(b+1)
+//        b+=1;
         System.out.println(b);
     }
 
