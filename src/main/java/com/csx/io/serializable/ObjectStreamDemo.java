@@ -1,7 +1,9 @@
 package com.csx.io.serializable;
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 /**
  * Created with IntelliJ IDEA.
@@ -12,6 +14,7 @@ import java.io.ObjectInputStream;
  */
 public class ObjectStreamDemo {
     public static void main(String[] args) throws Exception {
+        writeObj();
         readObj();
     }
 
@@ -23,5 +26,17 @@ public class ObjectStreamDemo {
         System.out.println(p.getName() + ":" + p.getAge());
 
         ois.close();
+    }
+
+
+    public static void writeObj() throws Exception {
+        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("obj.object"));
+
+        Person p = new Person("csx",18);
+
+        oos.writeObject(p);
+
+        oos.flush();
+        oos.close();
     }
 }
