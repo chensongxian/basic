@@ -44,4 +44,26 @@ public class AssignDemo {
         System.out.println(min);
     }
 
+
+    @Test
+    public void test4() {
+        byte a = 3;
+        byte b = 4;
+        /*
+         * 编译会报错，因为当运行过程中JVM是无法判断a和b的值得，byte类型的变量会在运算时自动提示为int类型
+         */
+//        byte c = a + b;
+        // 不会报错，JVM中有常量优化机制，会在编译的时候直接把3+4的结果赋值给c
+        byte c = 3 + 4;
+//        System.out.println(c);
+    }
+
+    @Test
+    public void test5() {
+          double a = 0.753;
+          // 编译会报错，因为java中小数默认为double类型，
+          // 如果赋值给float会编译出错，要想赋值给float必须后面加f
+          // float b = 0.753;
+        float b = 0.753f;
+    }
 }
